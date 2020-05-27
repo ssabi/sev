@@ -472,17 +472,37 @@
 				}
 			});
 
+			if (width_size >= 1024) {
+				console.log('web')
+				viewLists.eq(0).addClass('view');
+				viewLists.eq(1).addClass('view');
+				viewLists.eq(2).addClass('view');
+				viewLists.eq(3).addClass('view');
+
+				setOpacity(arr);
+			} else if (width_size <= 1024 && width_size > 767) {
+				console.log('tablet')
+				viewLists.eq(0).addClass('view');
+				viewLists.eq(1).addClass('view');
+
+				setOpacity(arr);
+			} else {
+				console.log('mo')
+				viewLists.removeClass('opacity');
+				viewLists.eq(0).addClass('view');
+			}
+
 			//opacity 내 form element disabled
 			setDisabled();
+			$('.reserv-wrap').find('.view').attr("tabIndex", 0);
+			$('.reserv-wrap').find('.fixed').removeAttr("tabIndex");
 
 			$(window).resize(function () {
-				
-				activeCont = 0;
-				viewLists.removeClass('view');
-				
 				width_size = window.outerWidth;
 				setTimeout(function(){
 					if(window.outerWidth != width_size){
+						activeCont = 0;
+						viewLists.removeClass('view');
 						if (width_size >= 1024) {
 							//console.log('web')
 							viewLists.eq(0).addClass('view');
@@ -632,10 +652,7 @@
 
 		//Opacity 재설정
 		function setOpacity(arr){
-			console.log(arr.length);
-
 			arr.forEach(function(item,index){
-				console.log(item,index);
 				$('.reserv-wrap').find('.reserv-box').eq(item).addClass("opacity");
 			});
 		}
