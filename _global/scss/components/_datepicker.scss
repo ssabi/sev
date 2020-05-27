@@ -1,0 +1,180 @@
+$datepicker-border-color: #666;
+$datepicker-width: 250px;
+
+#inseq-datepicker {
+	position: absolute;
+	width: $datepicker-width;
+	padding: 12px;
+	border: 1px solid $datepicker-border-color;
+	font-size: 14px;
+	background-color: #fff;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1500;
+
+	caption {
+		height: 0;
+		font-size: 0;
+		line-height: 0;
+		overflow: hidden;
+	}
+
+	table {
+		table-layout: auto;
+		margin-top: 0;
+		width: 100%;
+		text-align: center;
+		border: 0px solid #000;
+		color: #000;
+		line-height: 2;
+
+		a {
+			line-height: 2;
+		}
+
+		th {
+			height: auto;
+			background: none;
+			padding: 0 0 0.5em;
+			border: 0;
+			margin: 0;
+			color: #000;
+			text-align: center;
+			line-height: 20px;
+		}
+
+		td {
+			padding: 0 !important;
+			margin: 0;
+			height: auto;
+			text-align: center;
+			border: 0;
+			line-height: 1;
+		}
+
+		tbody {
+			td {
+				height: 28px;
+				color: #767676;
+
+				a {
+					display: block;
+					color: #000;
+					text-decoration: none;
+
+					&.today {
+						color: #fff !important;
+						background-color: $primary;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+
+	#tableCalendarTitle {
+		margin-bottom: 5px;
+
+		td {
+			font-size: 16px;
+
+			a {
+				font-size: inherit;
+			}
+		}
+	}
+
+	#tableMonthTitle td a {
+		font-size: 16px;
+	}
+
+	#tableYearTitle {
+		margin-bottom: 5px;
+
+		td {
+			font-size: 16px;
+		}
+	}
+
+	#tableCalendarTitle,
+	#tableYear,
+	#tableMonthTitle,
+	#tableMonth {
+		a {
+			color: #000;
+		}
+	}
+
+	#tableCalendar {
+
+		th,
+		td {
+			&:first-child {
+				color: #cf2121;
+
+				a {
+					color: inherit;
+				}
+			}
+
+			&:last-child {
+				color: #0072cf;
+
+				a {
+					color: inherit;
+				}
+			}
+		}
+	}
+
+	.prev,
+	.next {
+		width: 25px;
+		height: 25px;
+		line-height: 23px;
+		border: 1px solid $border-base;
+		padding: 0;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 25px 25px;
+		color: transparent !important;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.prev {
+		float: left;
+		margin-left: 16px;
+		background-image: url(#{$url-img}/common/ico-paging-prev.png);
+	}
+
+	.next {
+		float: right;
+		margin-right: 16px;
+		background-image: url(#{$url-img}/common/ico-paging-next.png);
+	}
+
+	.btn-cal-close {
+		position: absolute;
+		top: -1px;
+		right: -27px;
+		width: 27px;
+		height: 27px;
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: transparent;
+			border: 1px solid $datepicker-border-color;
+			background: $datepicker-border-color url(#{$url-img}/common/ico-close-white.png) no-repeat center center;
+			background-size: 15px 15px;
+		}
+	}
+
+	@if ($responsive) {
+		@include media-breakpoint-down(sm) {
+			left: 50% !important;
+			margin-left: -$datepicker-width * 0.5 !important;
+		}
+	}
+}

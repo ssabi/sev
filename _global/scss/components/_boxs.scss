@@ -1,0 +1,260 @@
+/* 상단 안내 박스 */
+.box-guide {
+	position: relative;
+	border: 1px solid #e6e6e6;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -4px;
+		width: 41px;
+		height: 7px;
+		background: url(#{$url-img}/common/box-guide-decoration@2x.png) no-repeat;
+		background-size: cover;
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 60px;
+		padding: 20px 30px;
+
+		&:before {
+			left: 30px;
+		}
+
+		+.title1 {
+			margin-top: -7px;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 40px;
+		padding: 8px $mobile-spacing 4px;
+
+		&:before {
+			left: $mobile-spacing;
+		}
+
+		+.title1 {
+			margin-top: -4px;
+		}
+	}
+}
+
+/* 상단 안내말 */
+
+/* 처리절차 */
+// .process-box {
+// 	margin-bottom: .20rem;
+// 	overflow: hidden;
+
+// 	>ul,
+// 	ol {
+// 		display: table;
+// 		table-layout: fixed;
+// 		border-collapse: separate;
+// 		margin: -.60rem;
+// 		width: calc(100% + 1.20rem);
+// 		border-spacing: .60rem;
+
+// 		>li {
+// 			position: relative;
+// 			display: table-cell;
+// 			border: 1px solid $border-base;
+// 			border-top: 2px solid $primary;
+// 			vertical-align: top;
+
+// 			+li {
+
+// 				&:before,
+// 				&:after {
+// 					content: '';
+// 					position: absolute;
+// 					top: 50%;
+// 					background-color: $primary;
+// 					width: .04rem;
+// 					height: .17rem;
+// 					left: -.32rem;
+// 					border-radius: .01rem;
+// 				}
+
+// 				&:before {
+// 					margin-top: -.15rem;
+// 					transform: rotate(-45deg);
+// 				}
+
+// 				&:after {
+// 					margin-top: -.05rem;
+// 					transform: rotate(45deg);
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	.inner {
+// 		display: block;
+// 	}
+
+// 	.title,
+// 	.content {
+// 		display: block;
+// 	}
+
+// 	.title {
+// 		text-align: center;
+// 		padding: .10rem .20rem;
+// 		border-bottom: 1px solid $border-base;
+
+// 		font-size: .16rem;
+// 		font-weight: 500;
+// 	}
+
+// 	.content {
+// 		padding: .15rem .20rem;
+// 	}
+
+// 	&.process-box-sm {
+// 		ol {
+// 			margin: -.30rem;
+// 			width: calc(100% + .60rem);
+// 			border-spacing: .30rem;
+
+// 			>li {
+// 				+li {
+
+// 					&:before,
+// 					&:after {
+// 						left: -.17rem;
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		.title {
+// 			font-size: .14rem;
+// 		}
+
+// 		.content {
+// 			font-size: .13rem;
+// 			padding: .10rem .15rem;
+// 		}
+// 	}
+
+// 	&.process-box-center {
+// 		text-align: center;
+// 		word-break: keep-all;
+
+// 		ol {
+// 			>li {
+// 				vertical-align: middle;
+// 			}
+// 		}
+// 	}
+
+// 	@if ($responsive) {
+// 		@include media-breakpoint-down(sm) {
+
+// 			// max-width: 480px;
+// 			// margin: 0 auto .20rem;
+// 			>ul,
+// 			ol {
+// 				display: block;
+// 				margin: 0 !important;
+// 				width: auto !important;
+
+// 				>li {
+// 					display: block;
+// 					padding: 0;
+
+// 					+li {
+// 						margin-top: 0.50rem;
+
+// 						&:before,
+// 						&:after {
+// 							top: -.35rem;
+// 							left: 50% !important;
+// 							margin-top: 0 !important;
+// 						}
+
+// 						&:before {
+// 							margin-left: -.05rem;
+// 						}
+
+// 						&:after {
+// 							margin-left: .05rem;
+// 						}
+// 					}
+// 				}
+// 			}
+
+// 			.title {
+// 				font-size: .16rem !important;
+// 				text-align: center;
+// 			}
+
+// 			.content {
+// 				padding: .15rem .20rem !important;
+// 				font-size: $font-size-base !important;
+// 			}
+// 		}
+// 	}
+// }
+
+/* 사이트안내 박스 */
+// .siteinfo-box {
+// 	border: 1px solid $border-base;
+// 	padding: .20rem;
+// 	margin-bottom: .20rem;
+
+// 	.image-area,
+// 	.content {
+// 		display: table-cell;
+// 	}
+
+// 	.image-area {
+// 		width: 1.80rem;
+// 		padding-right: .20rem;
+// 		vertical-align: top;
+
+// 		img {
+// 			width: 100%;
+// 		}
+// 	}
+
+// 	.content {
+// 		margin-top: .10rem;
+// 		vertical-align: middle;
+// 	}
+
+// 	.btn-area {
+// 		margin-bottom: .10rem;
+// 	}
+
+// 	@if ($responsive) {
+// 		@include media-breakpoint-down(sm) {
+
+// 			.image-area,
+// 			.content {
+// 				display: block;
+// 			}
+
+// 			.image-area {
+// 				text-align: center;
+// 				padding: 0;
+// 				margin: 0 auto .20rem;
+
+// 				img {
+// 					width: auto;
+// 				}
+// 			}
+
+// 			.content {
+// 				margin: 0;
+// 			}
+
+// 			.btn-area {
+// 				text-align: center;
+// 				margin-bottom: .15rem;
+// 			}
+// 		}
+// 	}
+// }

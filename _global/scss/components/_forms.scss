@@ -1,0 +1,282 @@
+// 
+// Forms
+// 
+.form-control {
+	$placeholder-color: #959595;
+	$disabled-color: #c2c2c2;
+
+	height: 45px;
+	font-size: 16px;
+	border: 1px solid #dadada;
+	border-radius: 0;
+	padding: 8px 15px;
+	line-height: 27px;
+	max-width: 100%;
+	appearance: none;
+	vertical-align: middle;
+	background: #fff;
+
+	&::-ms-clear {
+		display: none;
+	}
+
+	&.full {
+		width: 100%;
+	}
+
+	&.inline {
+		width: auto !important;
+	}
+
+	&:focus {
+		position: relative;
+		outline: 0;
+		border-color: $primary;
+		// border-radius: 1px;
+		// box-shadow: 0 0 0 3px rgba($primary, 0.2);
+	}
+
+	&::-webkit-input-placeholder {
+		color: $placeholder-color;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $placeholder-color;
+		opacity: 1;
+	}
+
+	&:disabled,
+	&[readonly],
+	&[readonly=readonly],
+	&.readonly {
+		color: $disabled-color;
+		background-color: $bg-lightgray;
+		opacity: 1;
+
+		&::-ms-value {
+			color: $disabled-color !important;
+		}
+	}
+
+	&:read-only:not(select) {
+		color: $disabled-color;
+		background-color: $bg-lightgray;
+		opacity: 1;
+	}
+
+	@include media-breakpoint-down(md) {
+		height: 40px;
+		padding: 8px 10px;
+		line-height: 22px;
+	}
+}
+
+select.form-control {
+	max-width: 100%;
+	padding-right: 30px;
+	line-height: normal;
+	background: #fff url(#{$url-img}/common/ico-chevron-down.png) no-repeat right 12px center;
+	background-size: 17px auto;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+textarea.form-control {
+	height: auto;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	overflow: auto;
+	line-height: inherit;
+	resize: none;
+}
+
+input {
+	$size: 20px;
+
+	&[type=checkbox],
+	&[type=radio] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+
+		+label {
+			position: relative;
+			height: $size;
+
+			.sr-only {
+				position: static;
+				margin-right: -6px !important;
+			}
+
+			&:before {
+				box-sizing: border-box;
+				display: inline-block;
+				width: $size;
+				height: $size;
+				border: 1px solid #aaa;
+				vertical-align: middle;
+				border-radius: 0;
+				margin: -2px 5px 0 0;
+				background-color: #fff;
+				content: '';
+			}
+		}
+
+		&:focus {
+			+label {
+				&:before {
+					border-color: $default;
+				}
+			}
+		}
+
+		// &:checked {
+		// 	+label {
+		// 		&:before {
+		// 			border-color: $primary;
+		// 		}
+		// 	}
+		// }
+
+		&:disabled {
+			+label {
+				color: #959595;
+
+				&:before {
+					opacity: .3;
+					border-color: #666;
+				}
+			}
+		}
+	}
+
+	&[type=checkbox] {
+		&:checked {
+			+label {
+				&:before {
+					background: #fff url(#{$url-img}/common/ico-checkbox-checked.png) no-repeat 45% center;
+					background-size: 13px 10px;
+				}
+			}
+		}
+	}
+
+	&[type=radio] {
+		+label {
+			&:before {
+				border-radius: 50%;
+			}
+		}
+
+		&:checked {
+			+label {
+				&:before {
+					background: #fff url(#{$url-img}/common/ico-radio-checked.png) no-repeat center center;
+					background-size: 10px 10px;
+				}
+			}
+		}
+	}
+
+	&.custom-control {
+		+label {
+			&:before {
+				border: 0;
+				border-radius: 50%;
+				background: #959595 url(#{$url-img}/common/ico-checkbox-checked-white.png) no-repeat 45% center !important;
+				background-size: 11px 8px !important;
+			}
+		}
+
+		&:checked {
+			+label {
+				&:before {
+					background-color: $primary !important;
+				}
+			}
+		}
+
+		&:disabled {
+			+label {
+				color: #959595;
+
+				&:before {
+					opacity: 1;
+					background-color: #dadada !important;
+				}
+			}
+		}
+	}
+}
+
+.input-group {
+	position: relative;
+	display: table;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	.form-control {
+		display: table-cell;
+		width: 100% !important;
+	}
+
+	.input-addon {
+		display: table-cell;
+		width: 1%;
+		padding-left: 10px;
+		vertical-align: middle;
+
+		&+.form-control {
+			margin-left: 9px;
+			border-right: 1px solid $border-base;
+		}
+	}
+
+	.btn-md {
+		height: 30px;
+		padding: 0 15px;
+		line-height: 28px;
+	}
+}
+
+.input-group-file {
+	display: block;
+	max-width: 500px;
+
+	label {
+		display: inline-block;
+	}
+
+	.form-file {
+		display: none;
+	}
+
+	.btn-md {
+		min-width: auto;
+		padding-left: 0.10rem;
+		padding-right: 0.10rem;
+	}
+
+	.form-control {
+		display: inline-block;
+		margin: 0 .05rem;
+		max-width: calc(100% - 1.64rem);
+	}
+}
+
+.ckeck-item {
+	vertical-align: middle;
+
+	+.ckeck-item {
+		margin-left: 26px;
+
+		@include media-breakpoint-down(md) {
+			margin-left: 11px;
+		}
+	}
+}

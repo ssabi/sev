@@ -1,0 +1,54 @@
+//
+// Icons
+// 
+
+.ico {
+	@include ir;
+}
+
+// 레이아웃 내 아이콘
+@include ico('allmenu', 17px, 14px);
+@include ico('home', 22px, 18px);
+@include ico('gnb1', 21px, 21px);
+@include ico('gnb2', 24px, 21px);
+
+@include ico('close', 22px, 22px);
+@include ico('chevron-down-xs-white', 12px, 6px);
+@include ico('util-zoom-in', 25px, 25px);
+@include ico('util-zoom-out', 25px, 25px);
+@include ico('util-print', 25px, 25px);
+
+@include ico2x('sns-gray-hub', 30px, 30px);
+@include ico2x('sns-gray-fb', 30px, 30px);
+@include ico2x('sns-gray-np', 30px, 30px);
+@include ico2x('sns-gray-tw', 30px, 30px);
+@include ico2x('sns-gray-yt', 30px, 30px);
+
+@include ico2x('gnb1-white', 18px, 17px);
+@include ico2x('gnb2-white', 19px, 17px);
+
+@include ico2x('quick-link1', 16px, 16px);
+@include ico2x('quick-link2', 16px, 16px);
+@include ico2x('quick-link3', 16px, 16px);
+@include ico2x('close-sm', 10px, 10px);
+@include ico2x('chevron-up-xs-bold', 9px, 6.5px);
+
+
+
+
+// 콘텐츠 아이콘
+
+// 1:1 사이즈 아이콘 : PC 전용
+@include ico('external-link', 14px, 14px);
+@include ico('chevron-down-xs', 10px, 6px);
+
+// PC 모바일 겸용 아이콘 : 이미지 2배수 저장 @2x
+@include ico2x('chevron-down', 17px, 9px);
+@include ico2x('chevron-down-sm', 15px, 9px);
+@include ico2x('external-link-white', 20px, 20px);
+@include ico2x('close-white', 21px, 21px);
+
+// PC 모바일 별도 아이콘 : 모바일 이미지만 @2x
+@include ico2('allmenu', 24px, 18px, 23px, 18px);
+@include ico2('search', 21px, 24px, 17px, 20px);
+@include ico2('search-white', 22px, 26px, 20px, 24px);

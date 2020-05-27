@@ -1,0 +1,81 @@
+.image-content {
+	position: relative;
+
+	img {
+		vertical-align: top;
+	}
+
+	.image-zoom-header {
+		display: none;
+	}
+
+	.btn-zoom {
+		display: none;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 38px;
+		height: 38px;
+		background: url(#{$url-img}/common/ico-image-zoom@2x.png) no-repeat;
+		background-size: cover;
+		text-indent: -9999px;
+		text-align: left;
+		overflow: hidden;
+	}
+
+	&.full-size {
+		.image-zoom {
+			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #333;
+			z-index: 1000;
+			padding-top: 50px;
+
+			img {
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.image-zoom-header {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			top: 0;
+			left: 0;
+			right: 0;
+			padding: 0 15px;
+			font-size: 18px;
+			font-weight: 500;
+			height: 50px;
+			color: #fff;
+			background-color: #000;
+		}
+
+		.btn-close-image {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50px;
+			height: 50px;
+
+			background: url(#{$url-img}/common/ico-close-white@2x.png) no-repeat center center;
+			background-size: 21px 21px;
+			text-indent: -9999px;
+			text-align: left;
+			overflow: hidden;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.btn-zoom {
+			display: block;
+		}
+	}
+}

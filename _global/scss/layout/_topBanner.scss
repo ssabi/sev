@@ -1,0 +1,8 @@
+// 최상단 공지 배너 (메인용)
+// TODO : 스타일링 필요
+#top-banner {
+	z-index: 300;
+	position: relative;
+	background-color: $darkprimary;
+	color: #fff;
+}
