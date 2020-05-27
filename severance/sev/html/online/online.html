@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재메뉴명 | 대메뉴명 | 사이트명</title>
+	<link href="../../assets/images/common/favicon.ico" rel="shortcut icon">
+	<link href="../../../../_global/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+	<link href="../../assets/css/online.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper wrapper-online-reserv">
+		<header id="online-reserv-header">
+			<div class="container">
+				<h1 class="online">
+					<a href="#">
+						<img src="../../assets/images/online/online-logo@2x.png" alt="세브란스/온라인예약">
+					</a>
+				</h1>
+			</div>
+		</header>
+		<div id="content">
+			<!-- 본문 -->
+			<div class="container">
+				<div class="reserv-wrap">
+					<div class="reserv-inner">
+						<div class="reserv-box fixed">
+							<div class="boxs-top">
+								<p class="tit text-title">병원선택</p>
+							</div>
+							<!-- Menu -->
+							<div class="bg-lightgray p-4 ml-4 mr-4">
+								<div class="custom-scroll" style="max-height: 280px;">
+									<div class="treeMenu-wrap">
+										<ul>
+											<li class="toggle on">
+												<a href="#none">세브란스병원</a>
+												<a href="#" data-open-text="펼치기" data-close-text="닫기" class="toggle-btn">펼치기</a>
+												<div class="toggle-cont" style="display: block;">
+													<ul class="depth2">
+														<li><a href="#">재활병원</a></li>
+														<li><a href="#">심장혈관병원</a></li>
+														<li><a href="#">안과병원</a></li>
+														<li><a href="#">어린이병원</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#">연세암병원</a></li>
+											<li><a href="#">치과대학병원</a></li>
+											<li class="toggle">
+												<a href="#">강남세브란스병원</a>
+												<a href="#" data-open-text="펼치기" data-close-text="닫기" class="toggle-btn">펼치기</a>
+												<div class="toggle-cont">
+													<ul class="depth2">
+														<li><a href="#">암병원</a></li>
+														<li><a href="#">척추병원</a></li>
+														<li><a href="#">치과병원</a></li>
+														<li><a href="#">심뇌혈관병원</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#">(신축)용인세브란스병원</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- // Menu -->
+							<div class="reserv-info">
+								<dl>
+									<dt class="tit text-bold">진료예약</dt>
+									<dd class="tel"><a href="tel:1599-1004">1599-1004</a></dd>
+									<dd>평일 08:00~18:30</dd>
+									<dd>토요일 08:00~13:00</dd>
+								</dl>
+							</div>
+							<div class="reserv-info-text indent ml-4 mr-4">
+								<ul class="list list1">
+									<li>회원 및 비회원 모두 예약이 가능합니다.</li>
+									<li>대리예약은 환자 정보 추가 입력 후 예약을 이용하시면 됩니다.</li>
+								</ul>
+							</div>
+							<button class="btn-move-step">다음 스텝 이동</button>
+						</div>
+						<!--해피콜 신청 인트로 -->
+						<div class="reserv-box happycall">
+							<a href="#none" class="intro">
+								<span>
+									<i class="ico"></i>
+									<span>해피콜 신청</span>
+								</span>
+							</a>
+						</div>
+						<!--// 해피콜 신청 인트로 -->
+						<!-- 회원예약 인트로 -->
+						<div class="reserv-box member">
+							<a href="#none" class="intro">
+								<span>
+									<i class="ico"></i>
+									<span>회원 예약</span>
+								</span>
+							</a>
+						</div>
+						<!--// 회원예약 인트로 -->
+						<!-- 비회원예약 인트로 -->
+						<div class="reserv-box nomember">
+							<a href="#none" class="intro">
+								<span>
+									<i class="ico"></i>
+									<span>비회원 예약</span>
+								</span>
+							</a>
+						</div>
+						<!-- //비회원예약 인트로 -->
+						<!-- 활성화 : .active / 비 활성화 : .opacity -->
+						<!-- <div class="reserv-box step1 active">
+							1
+							<input type="text" name="" id="">
+							<select name="" id="">
+								<option value="">###</option>
+							</select>
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<button type="button" class="btn-next"><span>다음</span></button>
+
+							<button type="button" class="btn-move-intro"><span>인트로 화면 보기</span></button>
+						</div>
+
+						<div class="reserv-box step2">
+							2
+							<input type="text" name="" id="">
+							<select name="" id="">
+								<option value="">###</option>
+							</select>
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<button type="button" class="btn-prev"><span>이전</span></button>
+							<button type="button" class="btn-next"><span>다음</span></button>
+						</div>
+
+						<div class="reserv-box step3">
+							3
+							<input type="text" name="" id="">
+							<select name="" id="">
+								<option value="">###</option>
+							</select>
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<button type="button" class="btn-prev"><span>이전</span></button>
+							<button type="button" class="btn-next"><span>다음</span></button>
+						</div>
+
+						<div class="reserv-box step4">
+							4
+							<input type="text" name="" id="">
+							<select name="" id="">
+								<option value="">###</option>
+							</select>
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<button type="button" class="btn-prev"><span>이전</span></button>
+							<button type="button" class="btn-next"><span>다음</span></button>
+						</div>
+
+						<div class="reserv-box step5">
+							5
+							<input type="text" name="" id="">
+							<select name="" id="">
+								<option value="">###</option>
+							</select>
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<button type="button" class="btn-prev"><span>이전</span></button>
+						</div> -->
+
+					</div>
+				</div>
+				<!-- //Reservation Interaction -->
+			</div>
+			<!-- // 본문 -->
+		</div>
+		<footer id="footer"></footer>
+	</div>
+
+	<!-- JavaScript -->
+	<script src="../../../../_global/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../../_global/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+	<script src="../../../../_global/js/slick.min.js"></script>
+	<script src="../../../../_global/js/datepicker.js"></script>
+
+	<!-- TODO :레이아웃 세팅 JS - 개발시 반드시 삭제 -->
+	<script src="../../../../_global/js/ui-layout-setting.js"></script>
+
+	<!-- 공통 UI 컴포넌트 -->
+	<script src="../../../../_global/js/ui-global.js"></script>
+	<script src="../../assets/js/ui-layout.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			disabled();
+
+			var reservWrap = $(".reserv-inner");
+			var btnPrev = reservWrap.find(".btn-prev");
+			var btnNext = reservWrap.find(".btn-next");
+			var ele = reservWrap.find(".reserv-box");
+			var viewCnt = 4;
+			var pcW = 1024;
+
+			btnPrev.on({
+				click: function () {
+					var idx = reservWrap.find(".active").index();
+					ele.eq(idx - 1).addClass("active").siblings("div").removeClass("active");
+
+					var hideLen = reservWrap.find(".reserv-box.hide").length;
+					reservWrap.find(".reserv-box.hide").eq(hideLen - 1).removeClass('hide').show();
+
+					disabled();
+				}
+			});
+			btnNext.on({
+				click: function () {
+					var idx = reservWrap.find(".active").index();
+					if ($(this).closest(".reserv-box").hasClass("active")) {
+						ele.eq(idx + 1).addClass("active").siblings("div").removeClass("active");
+					} else {
+						ele.eq(idx).addClass("active").siblings("div").removeClass("active");
+					}
+
+					var wW = $(window).width();
+					if (wW > pcW) {
+						reservWrap.find(".reserv-box:not('.hide'):not('.fixed')").eq(0).addClass("hide").hide();
+					} else {
+						reservWrap.find(".reserv-box:not('.hide')").eq(0).addClass("hide").hide();
+					}
+
+					disabled();
+				}
+			});
+
+			$(".btn-move-step").on({
+				click: function () {
+					$(this).closest(".reserv-box").addClass("hide").hide();
+				}
+			});
+
+
+			var $treeMenu = $(".treeMenu-wrap");
+			var $treeMenuLi = $treeMenu.find("li");
+			$treeMenuLi.on({
+				click: function (e) {
+					var $this = $(this);
+					if ($(this).hasClass("toggle")) {
+						e.preventDefault();
+
+						$(this).toggleClass("on").find(".toggle-cont").slideToggle(200);
+						$treeMenuLi.not(this).removeClass("on").find(".toggle-cont").slideUp(200)
+
+						// $(this).next().slideToggle(300);
+						// $("ul li a").not(this).next().slideUp(300);
+					}
+				}
+			});
+			$(".toggle-cont > ul").click(function (e) {
+				e.stopPropagation();
+			});
+		});
+
+		$(window).on({
+			resize: function () {
+				var wW = $(window).width();
+				setTimeout(function () {
+					if ($(window).width() == wW) {
+						window.location.reload();
+					}
+				}, 200);
+			}
+		});
+
+
+		function disabled() {
+			var reservWrap = $(".reserv-inner");
+			var ele = reservWrap.find("[class*='step']");
+			var activeEle = reservWrap.find(".active");
+			ele.addClass("opacity").find("input, select, textarea, button").attr("disabled", true);
+			activeEle.removeClass("opacity").find("input, select, textarea, button").attr("disabled", false);
+		}
+	</script>
+</body>
+
+</html>
