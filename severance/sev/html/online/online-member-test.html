@@ -472,7 +472,7 @@
 				}
 			});
 
-			if (width_size >= 1024) {
+			if (width_size > 1024) {
 				console.log('web')
 				viewLists.eq(0).addClass('view');
 				viewLists.eq(1).addClass('view');
@@ -503,7 +503,7 @@
 					if(window.outerWidth != width_size){
 						activeCont = 0;
 						viewLists.removeClass('view');
-						if (width_size >= 1024) {
+						if (width_size > 1024) {
 							//console.log('web')
 							viewLists.eq(0).addClass('view');
 							viewLists.eq(1).addClass('view');
