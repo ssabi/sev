@@ -482,7 +482,7 @@
 				
 				width_size = window.outerWidth;
 				setTimeout(function(){
-					if(width_size == window.outerWidth){
+					if(window.outerWidth != width_size){
 						if (width_size >= 1024) {
 							//console.log('web')
 							viewLists.eq(0).addClass('view');
@@ -506,6 +506,8 @@
 						setDisabled();
 						$('.reserv-wrap').find('.view').attr("tabIndex", 0);
 						$('.reserv-wrap').find('.fixed').removeAttr("tabIndex");
+
+						width_size = window.outerWidth;
 					}
 				}, 200);
 			});
