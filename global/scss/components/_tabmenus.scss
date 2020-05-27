@@ -1,0 +1,442 @@
+/* 탭메뉴 */
+.tab-menu {
+	margin-bottom: 40px;
+	overflow: hidden;
+
+	// @include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 20px;
+	}
+}
+
+.tab-list {
+	text-align: center;
+	line-height: 1.2;
+
+	li {
+		border: 1px solid transparent;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 55px;
+
+			span {
+				@include text-ellipsis(2, 20px);
+			}
+		}
+	}
+
+	&:not(.slick-slider) {
+		li {
+			display: table-cell;
+			width: 1%;
+			vertical-align: middle;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 18px;
+	}
+
+	@include media-breakpoint-down(md) {
+		$tab-height: 45px;
+		font-size: 16px;
+
+		li {
+			flex-basis: 33.33333%;
+			width: 33.33333%;
+			min-width: 33.33333%;
+
+			a {
+				height: $tab-height;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		li {
+			flex-basis: 50%;
+			width: 50%;
+			min-width: 50%;
+		}
+	}
+}
+
+.tab-menu-flicking {
+	position: relative;
+	padding-right: 72px;
+
+	.tab-scroll-container {
+		overflow: hidden;
+	}
+
+	.tab-list {
+		@include clearfix;
+		display: flex;
+		transition-duration: .3s;
+
+		li {
+			display: block;
+		}
+	}
+
+	.control {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		height: 22px;
+		padding: 0 5px;
+		transform: translateY(-50%);
+
+		.btn-tab-prev,
+		.btn-tab-next {
+			display: inline-block;
+			vertical-align: top;
+			width: 21px;
+			margin: 0 5px;
+			height: 21px;
+			border-radius: 11px;
+			background: #959595 url(#{$url-img}/common/ico-arrow-left-white@2x.png) no-repeat;
+			background-size: 21px 21px;
+			text-indent: -9999px;
+			text-align: left;
+			overflow: hidden;
+		}
+
+		.btn-tab-prev {
+			right: -32px;
+			background-position: right center;
+		}
+
+		.btn-tab-next {
+			right: -63px;
+			background-image: url(#{$url-img}/common/ico-arrow-right-white@2x.png);
+			background-position: left center;
+		}
+
+		&.start {
+			.btn-tab-prev {
+				background-color: #dadada !important;
+			}
+		}
+
+		&.end {
+			.btn-tab-next {
+				background-color: #dadada !important;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		.tab-list {
+			li {
+				flex-basis: 16.5%;
+				width: 16.5%;
+				min-width: 16.5%;
+				max-width: 16.5%;
+			}
+		}
+
+		.control {
+
+			.btn-tab-prev,
+			.btn-tab-next {
+
+				&:hover,
+				&:focus {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-right: 58px;
+
+		.control {
+
+			.btn-tab-prev,
+			.btn-tab-next {
+				margin: 0;
+
+				&:active {
+					background-color: $primary;
+				}
+			}
+
+			.btn-tab-next {
+				margin-left: 3px;
+			}
+		}
+	}
+
+}
+
+.tab-content {
+	display: none;
+}
+
+.tab-menu1,
+.tab-menu2 {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 1px solid $border-light;
+		background-color: $bg-lightgray;
+	}
+
+	li {
+		position: relative;
+	}
+}
+
+.tab-menu1 {
+
+	li {
+		a {
+			padding-bottom: 2px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: -1px;
+				right: -1px;
+				bottom: -1px;
+				left: -1px;
+				border: 1px solid transparent;
+				border-bottom: 3px solid transparent;
+			}
+		}
+
+		&.on {
+			a {
+				position: relative;
+				background-color: #fff;
+				outline: 0;
+				font-weight: bold;
+
+				&:before {
+					border-color: $border-light;
+					border-bottom-color: $secondary;
+				}
+			}
+		}
+	}
+}
+
+.tab-menu2 {
+
+	li {
+		&.on {
+			position: relative;
+			color: $primary;
+			background-color: #fff;
+
+			a {
+				position: relative;
+				font-weight: bold;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: -1px;
+					right: -1px;
+					bottom: -1px;
+					left: -1px;
+					border: 2px solid $primary;
+				}
+			}
+
+			// &:first-child {
+			// 	a {
+			// 		&:before {
+			// 			left: -2px;
+			// 		}
+			// 	}
+			// }
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		li {
+			span {
+				padding: 0 10px;
+			}
+		}
+	}
+}
+
+.tab-menu3 {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-bottom: 1px solid #e6e6e6;
+	}
+
+	.tab-list {
+		border-left: 0;
+		display: flex;
+	}
+
+	li {
+		border: 0;
+
+		a {
+			height: 36px;
+
+			span {
+				height: 100%;
+				white-space: nowrap;
+			}
+
+			br {
+				display: none;
+			}
+		}
+
+		&.on {
+			font-weight: bold;
+
+			a {
+				position: relative;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					border-bottom: 1px solid #666;
+				}
+			}
+		}
+	}
+
+	.control {
+		top: 0;
+		transform: translateY(0);
+	}
+
+	@include media-breakpoint-up(lg) {
+		.tab-list {
+			li {
+				display: block;
+				flex-basis: 20%;
+				width: 20%;
+				min-width: 20%;
+				max-width: 20%;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		li {
+			span {
+				padding: 0 10px;
+			}
+
+			a {
+				height: 30px;
+			}
+		}
+	}
+}
+
+.tab-menu-matrix {
+	background-color: $bg-whiteblue;
+
+	.tab-list {
+		border-color: #fff;
+		@include clearfix;
+	}
+
+	li {
+		position: relative;
+		display: block !important;
+		float: left;
+		width: 20% !important;
+		border: 0;
+
+		a {
+			height: 55px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			height: 1px;
+			background-color: #fff;
+		}
+
+		&:after {
+			content: '';
+			width: 1px;
+			height: 500px;
+			position: absolute;
+			top: 0;
+			right: -1px;
+			background-color: #fff;
+		}
+
+		&.on {
+			position: relative;
+			font-weight: bold;
+
+			// border: 1px solid red !important;
+			a {
+				color: $primary;
+
+				span {
+					position: relative;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					border: 1px solid $primary;
+					background-color: #fff;
+				}
+
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		li {
+			width: 33.333%;
+
+			a {
+				height: 45px;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		li {
+			width: 50%;
+		}
+	}
+}

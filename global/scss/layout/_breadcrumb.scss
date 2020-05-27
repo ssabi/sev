@@ -1,0 +1,147 @@
+#breadcrumb {
+	position: relative;
+	height: $breadcrumb-height;
+	background-color: $darkprimary;
+	color: #fff;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.breadcrumb-list {
+		flex: 1 1 auto;
+
+		>li {
+			position: relative;
+			float: left;
+
+			&:first-child {
+
+				>a {
+					padding-right: 15px;
+					display: flex;
+					align-items: center;
+					height: $breadcrumb-height;
+				}
+			}
+
+			&:last-child {
+				>a {
+					font-weight: bold;
+				}
+			}
+
+			&:nth-child(n+2) {
+				width: 280px;
+
+				&:before {
+					position: absolute;
+					left: 0;
+					top: 50%;
+					margin-top: -7px;
+					width: 1px;
+					height: 15px;
+					background: #fff;
+					background-size: 15px 8px;
+					opacity: .2;
+					content: '';
+				}
+
+				>a {
+					display: block;
+					padding: 4px 45px 0 20px;
+					font-size: 17px;
+					line-height: $breadcrumb-height - 4px;
+
+					&:after {
+						position: absolute;
+						right: 15px;
+						top: 50%;
+						margin-top: -3px;
+						width: 12px;
+						height: 6px;
+						background: url(#{$url-img}/common/ico-chevron-down-xs-white.png) no-repeat;
+						background-size: cover;
+						content: '';
+					}
+				}
+
+				&.on {
+					>a {
+						&:after {
+							transform: rotate(180deg);
+						}
+					}
+
+					ul {
+						display: block;
+					}
+				}
+			}
+
+			ul {
+				display: none;
+				position: absolute;
+				z-index: 10;
+				left: 0;
+				right: 0;
+				border: 1px solid $darkprimary;
+				border-top: 0;
+				background-color: #fff;
+				padding: 15px 19px;
+				font-size: 16px;
+
+				li {
+					a {
+						position: relative;
+						display: block;
+						line-height: 22px;
+						padding: 3px 0;
+						color: $default;
+
+						&:hover,
+						&:focus {
+							color: $primary;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+
+		.btn-home {
+			background-color: #000;
+			width: 50px;
+			height: 49px;
+		}
+	}
+
+	.util-menu {
+		position: relative;
+		flex: 0 0 auto;
+		width: 123px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background-color: $secondary;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 100%;
+			width: 1000px;
+			background-color: $secondary;
+		}
+
+		.btn {
+			margin-left: 12px;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}

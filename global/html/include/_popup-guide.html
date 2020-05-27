@@ -1,0 +1,130 @@
+<h3 class="title-guide">레이어 팝업</h3>
+<div>
+	<h4 class="title1">레이어 팝업 호출</h4>
+	<div>
+		<a href="#layer-sample" class="btn btn-md btn-primary js-layer-open">링크로 호출 (link)</a>
+		<code class="ml-2">
+			a href="#layer-sample" class="js-layer-open"
+		</code>
+	</div>
+	<div class="mt-3">
+		<button type="button" class="btn btn-md btn-primary" onclick="openModal('#layer-sample');">
+			함수로 호출 (button)
+		</button>
+		<code class="ml-2">
+			onclick="openModal('#layer-sample');"
+		</code>
+	</div>
+	<div class="mt-3">
+		<a href="#layer-sample-sm" class="btn btn-md btn-primary js-layer-open">.modal-sm</a>
+		<a href="#layer-sample-lg" class="btn btn-md btn-primary js-layer-open">.modal-lg</a>
+		<a href="#layer-sample-xl" class="btn btn-md btn-primary js-layer-open">.modal-xl</a>
+	</div>
+
+	<h4 class="title1">레이어 팝업 닫기</h4>
+	<code>closeModal('#layer-sample');</code>
+</div>
+
+<h3 class="title-guide">윈도우 팝업</h3>
+<div>
+	<p>웹 접근성 지침에 따라 사용자에게 새창열림 공지 및 키보드 포커싱 관련 처리가 필수이며, 다음과 같은 방식으로 처리합니다.</p>
+	<h4 class="title1">윈도우 팝업 호출</h4>
+	<ul class="list-dot mb-2">
+		<li>앵커태그(a) 사용을 원칙으로 하며 버튼에 <code>target="_blank" title="새창"</code> 어트리뷰트 필수</li>
+		<li>
+			<span class="text-red">href에 팝업 URI를 입력</span>하고,
+			<code>openWindow(this, '팝업창이름', '팝업너비', '팝업높이'); return false;</code> 함수 사용
+		</li>
+	</ul>
+
+	<a href="popup.html" target="_blank" title="새창" class="btn btn-md btn-primary"
+		onclick="openWindow(this, 'popName', '700', '830'); return false;">링크로 윈도우팝업 호출 (권장)</a>
+	<code class="code mt-2 mb-4">&lt;a <span class="color-primary">href=&quot;_popup.html&quot;
+			target=&quot;_blank&quot; title=&quot;새창&quot;</span> onclick=&quot;<span class="color-primary">openWindow(this,
+			'팝업창이름', '팝업너비', '팝업높이'); return false;</span>&quot;&gt;팝업열기&lt;/a&gt;</code>
+
+	<button type="button" id="btn-for-focus-popup" class="btn btn-md btn-primary"
+		onclick="openWindow('popup.html', 'popName', '850', '600', '#btn-for-focus-popup');">함수로 팝업 호출</button>
+	<code class="code mt-2">openWindow('popup.html', 'popName', '850', '600', '#btn-for-focus-popup');</code>
+	<p class="mt5">버튼없이 팝업을 호출하는 경우에만 사용하며, 부득이 버튼에 사용할 경우 포커싱처리 및 title="새창" 필수</p>
+	<code class="code mt-2">openWindow('팝업URI', '팝업창이름', '팝업너비', '팝업높이', '팝업창 닫은 뒤 포커스 받을 버튼 id (버튼 미존재시
+		생략가능)');</code>
+
+	<h4 class="title1">윈도우 팝업 닫기</h4>
+	<p>팝업을 닫은 뒤 호출 버튼으로 포커싱 처리를 위한 함수</p>
+	<code class="code code-block mt5">&lt;button type=&quot;button&quot; onclick=&quot;<span
+			class="color-primary">closeWindow();</span>&quot;&gt;창닫기&lt;/button&gt;</code>
+</div>
+
+<!-- Modal Popup -->
+<div class="modal-popup hide" id="layer-sample">
+	<div class="dimed"></div>
+	<div class="popup-inner">
+		<div class="popup-header">
+			<h2 class="popup-title">레이어팝업 타이틀</h2>
+		</div>
+		<div class="popup-body">
+			<h3 class="title1 mt-0">레이어팝업 본문</h3>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+		</div>
+		<button type="button" class="btn btn-close-popup">닫기</button>
+	</div>
+</div>
+
+<!-- Modal Popup : .modal-sm -->
+<div class="modal-popup modal-sm hide" id="layer-sample-sm">
+	<div class="dimed"></div>
+	<div class="popup-inner">
+		<div class="popup-header">
+			<h2 class="popup-title">레이어팝업 타이틀</h2>
+		</div>
+		<div class="popup-body">
+			<h3 class="title1 mt-0">레이어팝업 본문</h3>
+			<p>.modal-popup.modal-sm</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+		</div>
+		<button type="button" class="btn btn-close-popup">닫기</button>
+	</div>
+</div>
+
+<!-- Modal Popup : .modal-lg -->
+<div class="modal-popup modal-lg hide" id="layer-sample-lg">
+	<div class="dimed"></div>
+	<div class="popup-inner">
+		<div class="popup-header">
+			<h2 class="popup-title">레이어팝업 타이틀</h2>
+		</div>
+		<div class="popup-body">
+			<h3 class="title1 mt-0">레이어팝업 본문</h3>
+			<p>.modal-popup.modal-lg</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+		</div>
+		<button type="button" class="btn btn-close-popup">닫기</button>
+	</div>
+</div>
+
+<!-- Modal Popup : .modal-xl -->
+<div class="modal-popup modal-xl hide" id="layer-sample-xl">
+	<div class="dimed"></div>
+	<div class="popup-inner">
+		<div class="popup-header">
+			<h2 class="popup-title">레이어팝업 타이틀</h2>
+		</div>
+		<div class="popup-body">
+			<h3 class="title1 mt-0">레이어팝업 본문</h3>
+			<p>.modal-popup.modal-xl</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+			<p>레이어팝업 본문 영역 레이어팝업 본문 영역</p>
+		</div>
+		<button type="button" class="btn btn-close-popup">닫기</button>
+	</div>
+</div>

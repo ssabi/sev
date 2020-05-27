@@ -1,0 +1,186 @@
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+.table {
+	border-top: 1px solid $border-base;
+	overflow: hidden;
+
+	table {
+		width: calc(100% + 1px);
+		margin-right: -1px;
+		table-layout: fixed;
+		border-collapse: separate;
+		border-bottom: 1px solid $border-base;
+	}
+
+	thead {
+		word-break: keep-all;
+	}
+
+	thead~tbody,
+	thead~tfoot {
+		text-align: center;
+	}
+
+	th,
+	td {
+		height: 50px;
+		padding: 13px 20px;
+		border-top: 1px solid $border-light;
+		border-right: 1px solid $border-light;
+	}
+
+	th {
+		background-color: $bg-lightgray;
+		font-weight: bold;
+	}
+
+	thead {
+		text-align: center;
+
+		tr {
+			&:first-child {
+
+				th,
+				td {
+					border-top: 0;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+
+		th,
+		td {
+			height: 40px;
+			padding: 7px 10px;
+		}
+	}
+}
+
+.table-write {
+	@include media-breakpoint-down(md) {
+
+		colgroup,
+		thead {
+			display: none;
+		}
+
+		tbody,
+		tfoot {
+			text-align: left !important;
+		}
+
+		th,
+		td {
+			display: block;
+			height: auto;
+			border: 0;
+		}
+
+		th {
+			background-color: #fff;
+			border-top: 1px solid $border-light;
+			padding: 12px 0 3px;
+		}
+
+		td {
+			padding: 3px 0 12px;
+		}
+
+		tr {
+			display: block;
+
+			&:first-child {
+				th {
+					border: 0;
+				}
+			}
+		}
+	}
+}
+
+.text-note {
+	position: relative;
+	color: $orange;
+	font-size: 14px;
+	padding-left: 1em;
+
+	&:before {
+		position: absolute;
+		content: '※';
+		left: 0;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.table-scroll {
+		position: relative;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: 10;
+			top: 0;
+			bottom: 0;
+
+			width: 23px;
+			top: 0;
+			bottom: 0;
+
+			transition-duration: .1s;
+		}
+
+		&:before {
+			opacity: 0;
+			visibility: hidden;
+
+			left: -23px;
+			box-shadow: 5px 0 15px rgba(0, 0, 0, .25);
+		}
+
+		&:after {
+			right: -23px;
+			box-shadow: -5px 0 15px rgba(0, 0, 0, .25);
+		}
+
+		&.scroll-ing {
+			&:before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		&.scroll-end {
+			&:after {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		.scroll-container {
+			margin-right: -1px;
+			overflow-y: hidden;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+
+			table {
+				position: relative;
+
+				&:after {
+					position: absolute;
+					width: 1px;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					background-color: #fff;
+					content: '';
+				}
+			}
+		}
+	}
+}
