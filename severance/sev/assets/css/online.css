@@ -2392,13 +2392,10 @@ textarea.form-control {
 }
 
 input[type=checkbox], input[type=radio] {
-  /*
   position: absolute;
   width: 1px;
   height: 1px;
   opacity: 0;
-  */
-  display:none;
 }
 
 input[type=checkbox] + label, input[type=radio] + label {
@@ -4386,6 +4383,7 @@ table {
 }
 
 #content .reserv-wrap .reserv-box .results-wrap li {
+  position:relative;
   margin-top: 10px;
 }
 
