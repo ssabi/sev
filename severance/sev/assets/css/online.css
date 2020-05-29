@@ -4627,6 +4627,7 @@ table {
 }
 
 #content .reserv-wrap .reserv-box .time-results-wrap .radios {
+  position:relative;
   float: left;
   width: 60px;
   margin: 4px;
