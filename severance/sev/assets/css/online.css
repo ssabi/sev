@@ -5044,6 +5044,8 @@ table {
   }
   #content .reserv-wrap .reserv-box .custom-scroll {
     margin-right: 0 !important;
+    overflow:hidden;
+    overflow-y:auto;
   }
   #content .reserv-wrap .reserv-box .consonant-list {
     padding-bottom: 15px;
