@@ -10,6 +10,10 @@
 	<link href="../../assets/images/common/favicon.ico" rel="shortcut icon">
 	<link href="../../../../global/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 	<link href="../../assets/css/online.css" rel="stylesheet">
+	<style>
+		.reserv-box{display:none !important;}
+		.reserv-box.view{display:block !important;}
+	</style>
 </head>
 
 <body>
@@ -734,7 +738,6 @@
 				viewLists.eq(0).addClass('view');
 				viewLists.eq(1).addClass('view');
 				viewLists.eq(2).addClass('view');
-				viewLists.eq(3).addClass('view');
 
 				setOpacity(arr);
 			} else if (width_size <= 1024 && width_size > 767) {
